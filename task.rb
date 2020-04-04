@@ -122,7 +122,7 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
   
   # 以下に回答を記載
-  n = data.values
+  n = data.keys
   puts n
 end
 
@@ -130,17 +130,14 @@ def q15
   data1 = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
-  if data1.include?(:age)
-    puts "OK"
-  else
-    puts "NG"
-  end
-  if data2.include?(:age)
-    puts "OK"
-  else
-    puts "NG"
-  end
+
+  
+  
   # 以下に回答を記載
+  n = data1.key?(:age) ? "OK" : "NG"
+  puts n
+  m = data2.key?(:age) ? "OK" : "NG"
+  puts m
 
 end
 
