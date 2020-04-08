@@ -155,7 +155,21 @@ end
 
 class UserQ17
   # 以下に回答を記載
+    attr_accessor :name, :age, :gender
 
+    def initialize(name:, age:, gender:)
+      @name = name
+      @age = age
+      @gender = gender
+    end  
+    def info
+      
+      puts "名前: #{@name}"
+      puts "年齢: #{@age}"
+      puts "性別: #{@gender}"
+      
+
+    end
 end
 
 def q17
@@ -166,11 +180,21 @@ def q17
   user1.info
   puts "-------------"
   user2.info
-end
+end 
 
 class UserQ18
   # 以下に回答を記載
+  attr_accessor :name, :age
 
+def initialize(name:, age:)
+  @name = name
+  @age = age
+end
+
+def introduce
+  return "はいさいまいど〜、#{@name}です！！！" if @age < 15
+  puts "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+end
 end
 
 def q18
@@ -184,8 +208,8 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+attr_accessor :name
+  def initialize(name:)
     @name = name
   end
 end
@@ -198,14 +222,35 @@ end
 
 class UserQ20
   # 以下に回答を記載
+attr_accessor :name, :age
 
+def initialize(name:, age:)
+  @name = name
+  @age = age
+end
 end
 
 class Zoo
   # 以下に回答を記載
+  def initialize(name:, entry_fee:)
+    @name = name
+    @entry_fee = entry_fee
+  end
 
+  def info_entry_fee(user)
+    fee = case user.age
+    when 0..5
+      @entry_fee[:infant]
+    when 6..12
+      @entry_fee[:children]
+    when 13..64
+      @entry_fee[:adult]
+    when 65..120
+      @entry_fee[:senior]
+  end
+puts "#{user.name}さんの入場料金は#{fee}です。"
 end
-
+end
 
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
