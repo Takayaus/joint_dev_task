@@ -193,8 +193,13 @@ def initialize(name:, age:)
 end
 
 def introduce
-  return "はいさいまいど〜、#{@name}です！！！" if @age < 15
-  puts "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+  #return "はいさいまいど〜、#{@name}です！！！" if @age < 15
+  #puts "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+  if @age < 15
+    puts "はいさいまいど〜、#{@name}です！！！"
+  else
+    puts "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+  end
 end
 end
 
